@@ -36,8 +36,6 @@ public class Utils {
 
     public static void clickCoordinates(int x, int y) {
         TouchAction touch = new TouchAction(AppiumDriverRunner.getAndroidDriver());
-        touch.press(PointOption.point(x, y))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(200)))
-                .release().perform();
+        touch.press(PointOption.point(x, y)).release().perform();
     }
 }
