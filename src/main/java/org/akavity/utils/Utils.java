@@ -14,6 +14,24 @@ import java.util.regex.Pattern;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Utils {
+    public static void sleepHours(long hour) {
+        try {
+            long mills = hour * 60 * 60 * 1000;
+            Thread.sleep(mills);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void sleepMinutes(long min) {
+        try {
+            long mills = min * 60 * 1000;
+            Thread.sleep(mills);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void sleep(long millis) {
         try {
             Thread.sleep(millis);
