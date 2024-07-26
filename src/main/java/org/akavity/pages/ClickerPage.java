@@ -7,8 +7,7 @@ import static com.codeborne.selenide.appium.SelenideAppium.$;
 
 public class ClickerPage {
 
-    private final SelenideAppiumElement hamsterChat = $(AppiumBy.xpath("//android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout[2]" +
-            "/android.widget.FrameLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]"));
+    private final SelenideAppiumElement hamsterChat = $(AppiumBy.xpath("//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]"));
     private final SelenideAppiumElement playButton = $(AppiumBy.xpath("(//android.widget.Button[@text='Играть в 1 клик \uD83D\uDC39'])[3]"));
     private final SelenideAppiumElement startButton = $(AppiumBy.xpath("//android.widget.Button[@text=\"Thank you, BingX\"]"));
     private final SelenideAppiumElement energyField = $(AppiumBy.xpath("//android.widget.TextView[contains(@text,' / 8500')]"));
