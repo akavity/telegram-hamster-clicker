@@ -13,6 +13,7 @@ public class ClickerPage {
     private final SelenideAppiumElement energyField = $(AppiumBy.xpath("//android.widget.TextView[contains(@text,' / 8500')]"));
     private final SelenideAppiumElement boostButton = $(AppiumBy.xpath("//android.view.View[@content-desc='Boost Boost']"));
     private final SelenideAppiumElement fullEnergy = $(AppiumBy.xpath("//android.widget.TextView[@text='Full energy']/.."));
+    private final SelenideAppiumElement  goAheadEnergy = $(AppiumBy.xpath("//android.widget.Button[@text='Go ahead']"));
     private final SelenideAppiumElement hamsterButton = $(AppiumBy.xpath("//android.view.View[@content-desc='Exchange']"));
 
     public SelenideAppiumElement getHamsterChat() {
@@ -37,6 +38,10 @@ public class ClickerPage {
 
     public SelenideAppiumElement getFullEnergy() {
         return fullEnergy;
+    }
+
+    public SelenideAppiumElement getGoAheadEnergy() {
+        return goAheadEnergy;
     }
 
     public SelenideAppiumElement getHamsterButton() {

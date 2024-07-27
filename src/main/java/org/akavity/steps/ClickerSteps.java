@@ -57,6 +57,9 @@ public class ClickerSteps {
                 clickerPage.getFullEnergy()
                         .shouldBe(visible)
                         .click(tap());
+                clickerPage.getGoAheadEnergy()
+                        .shouldBe(visible)
+                        .click(tap());
                 Utils.sleep();
                 timeWaiter = true;
                 countEnergy--;
