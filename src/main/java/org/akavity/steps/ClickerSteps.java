@@ -38,18 +38,20 @@ public class ClickerSteps {
     }
 
     @Step
-    public void clickHamMoney() {
-//        boolean flag = false;
+    public void clickHamMoney(int energyLimit, int fullEnergy, int multitap) {
+        log.info("Start click hamster button");
         boolean timeWaiter = false;
-        int countEnergy = 6;
+        int countEnergy = fullEnergy;       // 6
         while (true) {    // flag
-            int count = 266;
+            int count = (int) Math.ceil((double) energyLimit / (multitap * 2));    // 266
+            log.info("Amount double clicks: {}", count);
             while (count > 0) {
                 Utils.clickCoordinates(630, 1020);      // координаты левого пальца
                 Utils.clickCoordinates(930, 1020);      // координаты правого пальца
                 count--;
             }
             if (timeWaiter == true) {
+                log.info("////////  Sleep 60 minutes ////////");
                 Utils.sleepMinutes(61);  // 60 мин
                 timeWaiter = false;
             } else if (countEnergy > 0 && timeWaiter == false) {
@@ -64,8 +66,9 @@ public class ClickerSteps {
                 timeWaiter = true;
                 countEnergy--;
             } else {
+                log.info("////////  Sleep 12 hours ////////");
                 Utils.sleepHours(12);  // наверное 12 часов
-                countEnergy = 6;
+                countEnergy = fullEnergy;   // 6
             }
         }
     }
