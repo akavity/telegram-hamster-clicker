@@ -12,7 +12,7 @@ import org.testng.annotations.Optional;
 public class BaseTest {
 
     @BeforeMethod
-    public void setUp(@Optional String platform) {
+    public void setUp() {
         WebDriverRunner.closeWebDriver();
         Configuration.browser = AndroidDriver.class.getName();
         SelenideAppium.launchApp();
