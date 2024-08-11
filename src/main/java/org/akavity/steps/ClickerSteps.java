@@ -27,6 +27,7 @@ public class ClickerSteps {
         clickerPage.getPlayButton()
                 .shouldBe(visible)
                 .click(tap());
+        Utils.sleep(5000);
     }
 
     @Step
