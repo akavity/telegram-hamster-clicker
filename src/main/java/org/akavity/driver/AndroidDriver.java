@@ -10,7 +10,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +31,6 @@ public class AndroidDriver implements WebDriverProvider {
         options.setPlatformName("Android");
         options.setPlatformVersion("14.0");
         options.setDeviceName("Medium Tablet");
-        options.setNewCommandTimeout(Duration.ofSeconds(11));
         options.setFullReset(false);
         options.setApp("D:/stady/QA automation engineer/IT-Academy/class 15/telegram.apk");
         options.noReset();    // remove registration

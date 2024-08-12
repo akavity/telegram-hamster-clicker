@@ -14,6 +14,6 @@ public class ClickerTest extends BaseTest {
         clickerSteps.clickPlayButton();
         Utils.sleep(5000);
         clickerSteps.clickStartButton();
-        clickerSteps.clickHamMoney();
+        clickerSteps.clickHamMoney(10000, 6, 19);
     }
 }
