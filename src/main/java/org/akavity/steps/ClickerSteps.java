@@ -56,23 +56,13 @@ public class ClickerSteps {
             log.info("Double click is started");
             log.info("Amount double clicks: {}", count);
             while (count > 0) {
-                Utils.clickCoordinates(LEFT_X_OFFSET, Y_OFFSET);      // координаты левого пальца     630, 1020
-                Utils.clickCoordinates(RIGHT_X_OFFSET, Y_OFFSET);      // координаты правого пальца    930, 1020
+                Utils.clickCoordinates(LEFT_X_OFFSET, Y_OFFSET);       // left finger coordinates    630, 1020
+                Utils.clickCoordinates(RIGHT_X_OFFSET, Y_OFFSET);      // right finger coordinates    930, 1020
                 count--;
             }
             log.info("Double click is stopped");
             if (timeWaiter == true) {
                 log.info("//////// Wait one hour ////////");
-//                int i = 0;
-//                while (true) {
-//                    if (i >= 600) {     //   60 * 60 /  6
-//                        log.info("//////// Single click is stopped ////////");
-//                        break;
-//                    }
-//                    Utils.clickCoordinates(780, 1020);
-//                    Utils.sleep(6000);
-//                    i += 1;
-//                }
                 clickAndWait(MINUTES_IN_HOUR, multitap);
                 timeWaiter = false;
             } else if (countEnergy > 0 && timeWaiter == false) {
@@ -98,20 +88,17 @@ public class ClickerSteps {
 
     private void clickAndWait(int min, int multitap) {
         log.info("Waiting for full energy button to activate");
-        // int n = a / b + ((a % b == 0) ? 0 : 1);
-        // int waitTime = (int) Math.ceil((double) multitap / ENERGY_IN_SEC);
         int waitTime = multitap / ENERGY_IN_SEC + ((multitap % ENERGY_IN_SEC == 0) ? 0 : 1);
         log.info("Waiting for the energy needed for one click to be restored: {} s", waitTime);
-        //int iter = (int) Math.ceil((double) (min * SECONDS_IN_MIN) / waitTime);
         int iter = (min * SECONDS_IN_MIN) / waitTime + (((min * SECONDS_IN_MIN) % waitTime == 0) ? 0 : 1);
         log.info("Number of clicks in a given time: {}", iter);
         int i = 0;
         while (true) {
-            if (i >= iter) {     //   60 * 60 /  6
+            if (i >= iter) {
                 log.info("//////// Stop waiting ////////");
                 break;
             }
-            Utils.clickCoordinates(MIDDLE_X_OFFSET, Y_OFFSET);    // 780, 1020
+            Utils.clickCoordinates(MIDDLE_X_OFFSET, Y_OFFSET);
             Utils.sleep((long) waitTime * MS_IN_S);
             i += 1;
         }
