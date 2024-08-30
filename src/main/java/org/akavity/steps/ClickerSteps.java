@@ -26,7 +26,7 @@ public class ClickerSteps {
     @Step
     public void clickHamsterChat() {
         log.info("Click hamster chat");
-        clickerPage.getHamsterChat()
+        clickerPage.getHamsterChats().first()
                 .shouldBe(visible)
                 .click(tap());
     }
@@ -34,7 +34,7 @@ public class ClickerSteps {
     @Step
     public void clickPlayButton() {
         log.info("Click Play button");
-        clickerPage.getPlayButton()
+        clickerPage.getPlayButtons().last()
                 .shouldBe(visible)
                 .click(tap());
     }

@@ -12,7 +12,7 @@ public class ClickerTest extends BaseTest {
     public void clickTest() {
         clickerSteps.clickHamsterChat();
         clickerSteps.clickPlayButton();
-        Utils.sleep(5000);
+        Utils.sleep(6000);
         clickerSteps.clickStartButton();
         clickerSteps.clickHamMoney(10000, 6, 19);
     }
